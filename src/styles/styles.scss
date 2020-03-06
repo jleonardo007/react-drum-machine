@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css?family=Patua+One&display=swap');
+
+html{
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: sans-serif;
+}
+
+*,*::before,*::after{
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+img{
+	max-width: 100%;
+  height: auto;
+}
+
+#drum-machine{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 2rem;
+  background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+  font-family: 'Patua One';
+  
+  #title{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    font-family: 'Patua One', cursive;
+    color: #2193b0;
+    
+    img{
+      align-self: center;
+      width: 80px;
+      height: 80px;
+    }
+    
+    h1{
+      align-self: center;
+      margin-left: 1rem;
+    }
+  }
+  
+  .drum-pads{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(3,1fr);
+    grid-gap: 20px;
+    width: 600px;
+    height: 400px;
+    margin: 0 auto 1rem;
+    padding: 1rem;
+    
+    .drum-pad:nth-child(5){
+      grid-row: 2/4;
+    }
+    
+    .drum-pad:nth-child(6){
+      grid-row: 2/4;
+    }
+    
+    .drum-pad:nth-child(9){
+      grid-column: 3/5;
+    }
+    
+    .drum-pad{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+      color: #A43931;
+      background: linear-gradient(to right, #141e30, #243b55);
+      cursor:pointer;
+    }
+  }
+  
+  .drum-control{
+    display: flex;
+    width: 600px;
+    height: 100px;
+    margin: 0 auto;
+    padding: 1.5rem 1rem;
+    background: linear-gradient(to right, #1d4350, #a43931);
+    
+    #display{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 300px;
+      color: #1d4350;
+      background: #eee;
+    }
+    
+    input{
+      margin-left: 5rem;
+    }
+  }
+}
