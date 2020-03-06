@@ -1,6 +1,5 @@
 import React from "react";
-import drumPads from './drumPads';
-
+import drumPads from "./drumPads";
 
 const activePadStyle = {
   background: "linear-gradient(to right, #2193b0, #6dd5ed)",
@@ -31,7 +30,7 @@ class Pad extends React.Component {
 
   activePad = () => {
     this.setState({
-      padStyle: activePadStyle
+      padStyle: { ...activePadStyle }
     });
     setTimeout(() => {
       this.setState({
@@ -98,13 +97,14 @@ class DrumMachine extends React.Component {
     return (
       <div id="drum-machine">
         <div id="title">
-          <img src="https://goo.gl/Umyytc" alt= "React-logo" />
+          <img src="https://goo.gl/Umyytc" alt="React-logo" />
           <h1>React Drum Machine</h1>
         </div>
         <div className="drum-pads">
-          {drumPads.map(drumPad => {
+          {drumPads.map( (drumPad,index) => {
             return (
               <Pad
+                key= {index}
                 drumPad={drumPad}
                 showId={this.showPadId}
                 volume={this.state.currentVolume}
